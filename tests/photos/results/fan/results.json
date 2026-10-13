@@ -1,0 +1,178 @@
+{
+ "photos": "tests/photos/fan",
+ "steps": [
+  {
+   "step": 1,
+   "aligned": true,
+   "inliers": 560,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 360,
+     "y": 208,
+     "w": 564,
+     "h": 561,
+     "strength": 68.4
+    }
+   ]
+  },
+  {
+   "step": 2,
+   "aligned": true,
+   "inliers": 192,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 370,
+     "y": 220,
+     "w": 551,
+     "h": 540,
+     "strength": 52.7
+    }
+   ]
+  },
+  {
+   "step": 3,
+   "aligned": true,
+   "inliers": 738,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 594,
+     "y": 433,
+     "w": 122,
+     "h": 124,
+     "strength": 138.5
+    }
+   ]
+  },
+  {
+   "step": 4,
+   "aligned": true,
+   "inliers": 361,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 454,
+     "y": 315,
+     "w": 385,
+     "h": 370,
+     "strength": 69.8
+    }
+   ]
+  },
+  {
+   "step": 5,
+   "aligned": true,
+   "inliers": 2004,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 992,
+     "y": 673,
+     "w": 15,
+     "h": 17,
+     "strength": 65.1
+    },
+    {
+     "x": 1029,
+     "y": 523,
+     "w": 15,
+     "h": 17,
+     "strength": 57.5
+    }
+   ]
+  }
+ ],
+ "models": {
+  "dino/masked/cut/cw0.1": {
+   "top1": 4,
+   "top2": 4,
+   "total": 5,
+   "rows": [
+    {
+     "part": 1,
+     "top": 1,
+     "correct": true,
+     "verdict": "sure",
+     "top2": true,
+     "scores": "1:0.657 3:0.307 2:0.236"
+    },
+    {
+     "part": 2,
+     "top": 2,
+     "correct": true,
+     "verdict": "unsure",
+     "top2": true,
+     "scores": "2:0.609 1:0.581 4:0.357"
+    },
+    {
+     "part": 3,
+     "top": 3,
+     "correct": true,
+     "verdict": "sure",
+     "top2": true,
+     "scores": "3:0.626 1:0.126 2:0.124"
+    },
+    {
+     "part": 4,
+     "top": 4,
+     "correct": true,
+     "verdict": "sure",
+     "top2": true,
+     "scores": "4:0.830 3:0.500 1:0.480"
+    },
+    {
+     "part": 5,
+     "top": 3,
+     "correct": false,
+     "verdict": "none",
+     "top2": false,
+     "scores": "3:0.127 2:0.090 5:0.077"
+    }
+   ]
+  }
+ },
+ "names": [
+  {
+   "part": 1,
+   "names": [
+    "fan blade",
+    "wheel",
+    "spinner cap"
+   ]
+  },
+  {
+   "part": 2,
+   "names": [
+    "fan blade",
+    "spinner cap",
+    "wheel"
+   ]
+  },
+  {
+   "part": 3,
+   "names": [
+    "button",
+    "spinner cap",
+    "magnet"
+   ]
+  },
+  {
+   "part": 4,
+   "names": [
+    "fan blade",
+    "wheel",
+    "motor"
+   ]
+  },
+  {
+   "part": 5,
+   "names": [
+    "spinner cap",
+    "ring",
+    "wheel"
+   ]
+  }
+ ]
+}

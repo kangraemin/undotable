@@ -1,0 +1,178 @@
+{
+ "photos": "tests/photos/remote-moved",
+ "steps": [
+  {
+   "step": 1,
+   "aligned": true,
+   "inliers": 754,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 480,
+     "y": 827,
+     "w": 228,
+     "h": 434,
+     "strength": 90.5
+    }
+   ]
+  },
+  {
+   "step": 2,
+   "aligned": true,
+   "inliers": 743,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 513,
+     "y": 854,
+     "w": 190,
+     "h": 329,
+     "strength": 121.8
+    }
+   ]
+  },
+  {
+   "step": 3,
+   "aligned": true,
+   "inliers": 1126,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 465,
+     "y": 154,
+     "w": 35,
+     "h": 32,
+     "strength": 99.4
+    },
+    {
+     "x": 276,
+     "y": 187,
+     "w": 32,
+     "h": 30,
+     "strength": 89.3
+    }
+   ]
+  },
+  {
+   "step": 4,
+   "aligned": true,
+   "inliers": 880,
+   "pass": 1,
+   "boxes": [
+    {
+     "x": 487,
+     "y": 628,
+     "w": 37,
+     "h": 34,
+     "strength": 37.6
+    }
+   ]
+  },
+  {
+   "step": 5,
+   "aligned": true,
+   "inliers": 1092,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 418,
+     "y": 193,
+     "w": 50,
+     "h": 47,
+     "strength": 81.6
+    }
+   ]
+  }
+ ],
+ "models": {
+  "dino/masked/cut/cw0.1": {
+   "top1": 4,
+   "top2": 5,
+   "total": 5,
+   "rows": [
+    {
+     "part": 1,
+     "top": 1,
+     "correct": true,
+     "verdict": "none",
+     "top2": true,
+     "scores": "1:0.441 2:0.257 5:0.148"
+    },
+    {
+     "part": 2,
+     "top": 2,
+     "correct": true,
+     "verdict": "sure",
+     "top2": true,
+     "scores": "2:0.888 1:0.234 3:0.077"
+    },
+    {
+     "part": 3,
+     "top": 4,
+     "correct": false,
+     "verdict": "none",
+     "top2": true,
+     "scores": "4:0.400 3:0.294 2:0.097"
+    },
+    {
+     "part": 4,
+     "top": 4,
+     "correct": true,
+     "verdict": "none",
+     "top2": true,
+     "scores": "4:0.195 3:0.137 2:0.108"
+    },
+    {
+     "part": 5,
+     "top": 5,
+     "correct": true,
+     "verdict": "sure",
+     "top2": true,
+     "scores": "5:0.651 4:0.334 3:0.194"
+    }
+   ]
+  }
+ },
+ "names": [
+  {
+   "part": 1,
+   "names": [
+    "spacebar",
+    "belt",
+    "pad"
+   ]
+  },
+  {
+   "part": 2,
+   "names": [
+    "spacebar",
+    "battery cover",
+    "tube"
+   ]
+  },
+  {
+   "part": 3,
+   "names": [
+    "spinner cap",
+    "clip ring",
+    "button"
+   ]
+  },
+  {
+   "part": 4,
+   "names": [
+    "spinner cap",
+    "circuit board",
+    "screw"
+   ]
+  },
+  {
+   "part": 5,
+   "names": [
+    "button",
+    "battery cover",
+    "spinner cap"
+   ]
+  }
+ ]
+}

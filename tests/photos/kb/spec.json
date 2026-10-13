@@ -1,0 +1,8 @@
+{"base": "Top-down photo, phone held directly above, of a compact 60% mechanical keyboard (no brand, no legends printed on keys) with a matte grey aluminium case, lying on a dark wooden desk. Off-white blank keycaps, except: one red keycap at the top-left (Esc position), one long dark-grey spacebar, one mint-green Enter key. A round brass volume knob sits on the top-right corner of the case. Two black hex screws are visible on the top edge of the case. Plenty of empty desk around the keyboard.",
+ "steps": [
+  {"part": "the round brass volume knob on the top-right corner", "under": "a short black knurled encoder shaft"},
+  {"part": "the red Esc keycap at the top-left", "under": "a bare mechanical switch with a red cross-shaped stem"},
+  {"part": "the mint-green Enter keycap", "under": "a bare mechanical switch with a red cross-shaped stem"},
+  {"part": "the long dark-grey spacebar keycap", "under": "a bare switch in the middle and two metal stabilizer wires"},
+  {"part": "the two black hex screws on the top edge of the case", "under": "two empty threaded screw holes"}
+ ]}

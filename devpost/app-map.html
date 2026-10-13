@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UndoTable app map</title>
+<style>
+  :root { --bg:#fbfaf7; --ink:#1d1d1b; --muted:#5e5b55; --line:#d9d4ca; --accent:#b4461f; --card:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#191816; --ink:#eeeae2; --muted:#a8a298; --line:#3a3732; --accent:#f08a5d; --card:#22201d; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:1.6rem; margin:0 0 4px; }
+  h2 { font-size:1.15rem; margin:32px 0 8px; border-bottom:1px solid var(--line); padding-bottom:4px; }
+  p.lead { color:var(--muted); margin-top:0; }
+  code { font:0.9em ui-monospace, Menlo, monospace; background:var(--card); border:1px solid var(--line); border-radius:4px; padding:0 4px; overflow-wrap:anywhere; }
+  ol.route > li, ul > li { margin-bottom:10px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+  svg { width:100%; height:auto; display:block; }
+  svg text { fill:var(--ink); font:13px system-ui, sans-serif; }
+  svg .box { fill:var(--card); stroke:var(--line); }
+  svg .hot { stroke:var(--accent); }
+  svg .arrow { stroke:var(--accent); stroke-width:2; fill:none; marker-end:url(#a); }
+  svg .sub { fill:var(--muted); font-size:11px; }
+  details { margin-top:8px; }
+  summary { cursor:pointer; color:var(--accent); }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px; overflow-x:auto; font:13px/1.45 ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body>
+<main>
+<h1>UndoTable — app map</h1>
+<p class="lead">A map of the finished code. Snapshot of commit <code>b8cce33</code>; later changes can make it drift.</p>
+
+<h2>What the app does</h2>
+<p>You photograph an object after each part you take off. UndoTable lines each photo up with the previous one, boxes what disappeared and remembers the part. Later it walks the steps in reverse, and a photo of a loose part tells you which step it came from. Everything runs in the browser; photos stay in IndexedDB on the device.</p>
+<div class="card">
+<ul>
+  <li><strong>Page</strong> — <code>index.html</code>, <code>styles.css</code>, <code>src/app.js</code>: screens, buttons, box drawing.</li>
+  <li><strong>Engine</strong> — <code>src/engine.js</code>: loads OpenCV.js and Transformers.js, runs compare and lookup.</li>
+  <li><strong>Comparer</strong> — <code>src/vision.js</code>: align photos, find changes, cut a part out of its background.</li>
+  <li><strong>Matcher</strong> — <code>src/embed.js</code>, <code>src/match.js</code>: image vectors and the sure / not sure / no close match decision.</li>
+  <li><strong>Keeper</strong> — <code>src/store.js</code>: IndexedDB.</li>
+</ul>
+</div>
+
+<h2>One action: “Where does this go?”</h2>
+<svg viewBox="0 0 720 200" role="img" aria-label="Photo of a loose part goes to runLookup in app.js, then lookup in engine.js, which cuts the part out and embeds it, then rank in match.js compares with stored parts from store.js, and showMatch displays the answer">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor" style="color:var(--accent)"/></marker></defs>
+  <rect class="box" x="4" y="20" width="140" height="64" rx="8"/><text x="16" y="46">Loose-part photo</text><text class="sub" x="16" y="66">camera / file input</text>
+  <rect class="box hot" x="184" y="20" width="160" height="64" rx="8"/><text x="196" y="46">runLookup</text><text class="sub" x="196" y="66">src/app.js</text>
+  <rect class="box hot" x="384" y="20" width="160" height="64" rx="8"/><text x="396" y="46">lookup</text><text class="sub" x="396" y="66">src/engine.js · cutOut, embed</text>
+  <rect class="box hot" x="584" y="20" width="132" height="64" rx="8"/><text x="596" y="46">rank</text><text class="sub" x="596" y="66">src/match.js</text>
+  <rect class="box" x="384" y="124" width="160" height="56" rx="8"/><text x="396" y="148">stored parts</text><text class="sub" x="396" y="166">src/store.js (IndexedDB)</text>
+  <rect class="box" x="184" y="124" width="160" height="56" rx="8"/><text x="196" y="148">showMatch</text><text class="sub" x="196" y="166">lookup sheet on screen</text>
+  <path class="arrow" d="M144 52H180"/><path class="arrow" d="M344 52H380"/><path class="arrow" d="M544 52H580"/>
+  <path class="arrow" d="M464 124V88"/><path class="arrow" d="M650 84V152H348"/>
+</svg>
+
+<h2>Reference route (not yet toured)</h2>
+<ol class="route">
+  <li><strong>The button.</strong> <code>src/app.js</code>, search <code>async function runLookup</code>. It takes the photo file, calls <code>lookup</code> with the stored parts and hands the result to <code>showMatch</code>.</li>
+  <li><strong>Turning a photo into a comparison.</strong> <code>src/engine.js</code>, search <code>export async function lookup</code>. It cuts the part out of its background (<code>cutOut</code>, using <code>foreground</code> in <code>src/vision.js</code>), makes DINOv2 vectors of the cut-out and the whole photo, and takes a colour signature.</li>
+  <li><strong>The decision.</strong> <code>src/match.js</code>, search <code>export function rank</code>. It scores every stored part, adds 0.1 × colour similarity, and returns <code>sure</code>, <code>unsure</code> (top two within 0.03) or <code>none</code> (best score under 0.5). <code>showMatch</code> in <code>src/app.js</code> shows one step for sure and two otherwise.</li>
+</ol>
+<details><summary>The verdict lines in <code>rank</code></summary>
+<pre>  let verdict = &#x27;sure&#x27;;
+  if (!scored.length || scored[0].score &lt; floor) verdict = &#x27;none&#x27;;
+  else if (scored.length &gt; 1 &amp;&amp; scored[0].score - scored[1].score &lt; margin) verdict = &#x27;unsure&#x27;;
+  return { ranked: scored, verdict };</pre>
+<p>From <code>src/match.js</code>; <code>scored</code> is sorted best first.</p>
+</details>
+
+<h2>To change this, start here</h2>
+<ul>
+  <li><strong>How sure the app must be before it gives one answer</strong> — <code>margin</code> and <code>floor</code> defaults of <code>rank</code> in <code>src/match.js</code>.</li>
+  <li><strong>The words shown on the lookup sheet</strong> — <code>showMatch</code> in <code>src/app.js</code>.</li>
+  <li><strong>How small a change still gets a box</strong> — <code>PASSES</code> and the <code>minArea</code> default in <code>src/vision.js</code>.</li>
+  <li><strong>Suggested part names</strong> — <code>data/vocab.json</code>, rebuilt with <code>tools/build-vocab.mjs</code>.</li>
+  <li><strong>The sample teardown</strong> — <code>samples/fan/manifest.json</code>.</li>
+</ul>
+
+<h2>A practice to reuse</h2>
+<div class="card">
+<p><strong>Decide with a measured test set, and keep part of it back.</strong> The open question “which model matches loose parts?” (<code>prd.md &gt; Open Questions</code>) was settled by generating step-by-step teardown photos, running <code>tests/harness/eval.mjs</code> over 48 settings on two sets, and only then running the chosen setting once on a third set made afterwards. The numbers are in <code>tests/photos/RESULTS.md</code>: the held-out remote showed lower confidence than the sets used for tuning, which a single tuned set would have hidden.</p>
+<p>On another project with a fuzzy “is it good enough?” question, write the score down first, tune on some examples, and check on ones you did not tune on.</p>
+</div>
+
+<h2>Run it again</h2>
+<pre>npm install
+npm run serve        # then open http://localhost:8642 and press "Try the sample"
+npm test             # unit tests
+python3 tests/e2e/smoke.py --width 390</pre>
+</main>
+</body>
+</html>

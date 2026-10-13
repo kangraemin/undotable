@@ -1,0 +1,178 @@
+{
+ "photos": "tests/photos/remote",
+ "steps": [
+  {
+   "step": 1,
+   "aligned": true,
+   "inliers": 1206,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 480,
+     "y": 827,
+     "w": 228,
+     "h": 434,
+     "strength": 90.6
+    }
+   ]
+  },
+  {
+   "step": 2,
+   "aligned": true,
+   "inliers": 1352,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 486,
+     "y": 872,
+     "w": 207,
+     "h": 344,
+     "strength": 123.5
+    }
+   ]
+  },
+  {
+   "step": 3,
+   "aligned": true,
+   "inliers": 1489,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 477,
+     "y": 183,
+     "w": 35,
+     "h": 30,
+     "strength": 102.7
+    },
+    {
+     "x": 291,
+     "y": 222,
+     "w": 35,
+     "h": 30,
+     "strength": 87.4
+    }
+   ]
+  },
+  {
+   "step": 4,
+   "aligned": true,
+   "inliers": 1452,
+   "pass": 1,
+   "boxes": [
+    {
+     "x": 480,
+     "y": 624,
+     "w": 35,
+     "h": 34,
+     "strength": 41.4
+    }
+   ]
+  },
+  {
+   "step": 5,
+   "aligned": true,
+   "inliers": 1756,
+   "pass": 0,
+   "boxes": [
+    {
+     "x": 367,
+     "y": 154,
+     "w": 54,
+     "h": 48,
+     "strength": 93.9
+    }
+   ]
+  }
+ ],
+ "models": {
+  "dino/masked/cut/cw0.1": {
+   "top1": 4,
+   "top2": 5,
+   "total": 5,
+   "rows": [
+    {
+     "part": 1,
+     "top": 1,
+     "correct": true,
+     "verdict": "none",
+     "top2": true,
+     "scores": "1:0.419 2:0.310 5:0.164"
+    },
+    {
+     "part": 2,
+     "top": 2,
+     "correct": true,
+     "verdict": "sure",
+     "top2": true,
+     "scores": "2:0.902 1:0.219 3:0.089"
+    },
+    {
+     "part": 3,
+     "top": 4,
+     "correct": false,
+     "verdict": "none",
+     "top2": true,
+     "scores": "4:0.404 3:0.263 2:0.096"
+    },
+    {
+     "part": 4,
+     "top": 4,
+     "correct": true,
+     "verdict": "none",
+     "top2": true,
+     "scores": "4:0.197 3:0.131 2:0.107"
+    },
+    {
+     "part": 5,
+     "top": 5,
+     "correct": true,
+     "verdict": "none",
+     "top2": true,
+     "scores": "5:0.493 4:0.314 1:0.179"
+    }
+   ]
+  }
+ },
+ "names": [
+  {
+   "part": 1,
+   "names": [
+    "spacebar",
+    "pad",
+    "battery cover"
+   ]
+  },
+  {
+   "part": 2,
+   "names": [
+    "battery cover",
+    "battery",
+    "tube"
+   ]
+  },
+  {
+   "part": 3,
+   "names": [
+    "button",
+    "spinner cap",
+    "clip ring"
+   ]
+  },
+  {
+   "part": 4,
+   "names": [
+    "circuit board",
+    "spinner cap",
+    "button"
+   ]
+  },
+  {
+   "part": 5,
+   "names": [
+    "button",
+    "spinner cap",
+    "battery cover"
+   ]
+  }
+ ]
+}

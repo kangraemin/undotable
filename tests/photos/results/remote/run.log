@@ -1,0 +1,7 @@
+dino/masked/cut/cw0.1 4/5 top2 5 1->1n 2->2s 3->4n 4->4n 5->5n
+names [{"part":1,"names":["spacebar","pad","battery cover"]},{"part":2,"names":["battery cover","battery","tube"]},{"part":3,"names":["button","spinner cap","clip ring"]},{"part":4,"names":["circuit board","spinner cap","button"]},{"part":5,"names":["button","spinner cap","battery cover"]}]
+step 1 true 1206 480,827,228x434@90.6
+step 2 true 1352 486,872,207x344@123.5
+step 3 true 1489 477,183,35x30@102.7 | 291,222,35x30@87.4
+step 4 true 1452 480,624,35x34@41.4
+step 5 true 1756 367,154,54x48@93.9

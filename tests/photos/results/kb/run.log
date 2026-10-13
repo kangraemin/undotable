@@ -1,0 +1,7 @@
+dino/masked/cut/cw0.1 5/5 top2 5 1->1s 2->2s 3->3u 4->4s 5->5n
+names [{"part":1,"names":["button","spinner cap","speaker"]},{"part":2,"names":["keycap","button","panel"]},{"part":3,"names":["keycap","cable","spacebar"]},{"part":4,"names":["keycap","panel","button"]},{"part":5,"names":["spinner cap","ring","clip ring"]}]
+step 1 true 1463 1163,326,69x75@74.6
+step 2 true 1529 228,311,74x75@115.6
+step 3 true 1389 1065,484,148x69@107.5
+step 4 true 1483 466,591,401x89@47.7
+step 5 true 1544 409,292,18x18@36.4 | 1029,319,17x17@38.4

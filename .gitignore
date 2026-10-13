@@ -1,0 +1,9 @@
+node_modules/
+/devpost/learner-profile.md
+.env
+.env.*
+!.env.example
+.DS_Store
+test-results/
+.cache/
+__pycache__/

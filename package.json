@@ -1,0 +1,17 @@
+{
+  "name": "undotable",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Undo for the physical world: photograph each teardown step, then put things back together in reverse.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/unit/*.test.js",
+    "serve": "python3 -m http.server 8642"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "4.2.0",
+    "@techstark/opencv-js": "4.12.0-release.1",
+    "sharp": "0.34.3"
+  }
+}

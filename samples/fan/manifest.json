@@ -1,0 +1,49 @@
+{
+ "name": "Desk fan (sample)",
+ "note": "Sample photos were generated with an image model (OpenAI Codex image generation) to test UndoTable; see tests/photos/.",
+ "steps": [
+  "step0.jpg",
+  "step1.jpg",
+  "step2.jpg",
+  "step3.jpg",
+  "step4.jpg",
+  "step5.jpg"
+ ],
+ "parts": [
+  "part1.jpg",
+  "part2.jpg",
+  "part3.jpg",
+  "part4.jpg",
+  "part5.jpg"
+ ],
+ "names": [
+  [
+   {
+    "name": "grille clip ring"
+   }
+  ],
+  [
+   {
+    "name": "front grille"
+   }
+  ],
+  [
+   {
+    "name": "spinner cap"
+   }
+  ],
+  [
+   {
+    "name": "fan blade"
+   }
+  ],
+  [
+   {
+    "name": "screw (left)"
+   },
+   {
+    "name": "screw (right)"
+   }
+  ]
+ ]
+}

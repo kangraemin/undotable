@@ -1,0 +1,8 @@
+{"base": "Top-down photo, phone held directly above, of a small white USB desk fan (about 20 cm, no brand) lying face-up on a green self-healing cutting mat with faint grid lines. Visible from above: a round white wire front grille held by a thin grey plastic clip ring, behind it four translucent light-blue fan blades with a small round orange spinner cap in the center. The fan's white base stand sticks out to the right. Two small silver Phillips screws sit in the base stand. Plenty of empty mat around the object.",
+ "steps": [
+  {"part": "the thin grey plastic clip ring around the edge of the front grille", "under": "the grille edge with its small metal tabs"},
+  {"part": "the round white wire front grille", "under": "the four translucent light-blue fan blades and the orange spinner cap, fully visible"},
+  {"part": "the small round orange spinner cap in the center of the blades", "under": "a small threaded metal shaft tip at the blade hub"},
+  {"part": "the four-blade translucent light-blue fan blade (one piece)", "under": "the white motor housing with the bare silver motor shaft and the rear grille behind it"},
+  {"part": "the two small silver Phillips screws in the base stand", "under": "two empty screw holes in the white base stand"}
+ ]}
