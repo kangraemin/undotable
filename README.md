@@ -2,6 +2,8 @@
 
 **Take something apart, photo by photo. UndoTable remembers which part came off where, and walks you back in reverse.**
 
+**Try it:** https://kangraemin.github.io/undotable/ (press "Try the sample") · **Demo video:** https://youtu.be/76SbhcEdTPQ
+
 You open a desk fan and three screws, a clip and a cap come out. Twenty minutes later there is a loose screw on the table and no idea where it came from. UndoTable is for the first-time tinkerer who wants to put it back without a spare part.
 
 1. **Snap a photo after each part you remove.** The app lines the new photo up with the previous one and boxes what disappeared.
