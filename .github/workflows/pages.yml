@@ -38,7 +38,7 @@ jobs:
       - name: Collect the files the page needs
         run: |
           mkdir _site
-          cp -r index.html styles.css src data samples _site/
+          cp -r index.html styles.css sitemap.xml og.png favicon.ico apple-touch-icon.png src data samples _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

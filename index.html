@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UndoTable</title>
-  <meta name="description" content="Undo for the stuff you take apart. Snap a photo after each step; UndoTable shows where every loose part came from.">
+  <title>UndoTable: photo-by-photo teardown log that shows where every part goes back</title>
+  <meta name="description" content="Snap a photo after each part you remove. UndoTable boxes what came off, remembers it, and plays the steps in reverse. Runs in your browser; photos never leave the device.">
+  <link rel="canonical" href="https://kangraemin.github.io/undotable/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UndoTable">
+  <meta property="og:title" content="UndoTable: undo for the stuff you take apart">
+  <meta property="og:description" content="Photograph each teardown step. UndoTable boxes the part that came off and walks you back in reverse. Everything runs in your browser.">
+  <meta property="og:url" content="https://kangraemin.github.io/undotable/">
+  <meta property="og:image" content="https://kangraemin.github.io/undotable/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UndoTable: undo for the stuff you take apart">
+  <meta name="twitter:description" content="Photograph each teardown step. UndoTable boxes the part that came off and walks you back in reverse.">
+  <meta name="twitter:image" content="https://kangraemin.github.io/undotable/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kangraemin.github.io/undotable/#site","name":"UndoTable","url":"https://kangraemin.github.io/undotable/","inLanguage":"en"},{"@type":"WebApplication","name":"UndoTable","url":"https://kangraemin.github.io/undotable/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any modern browser","description":"Photograph each step of a teardown. The browser lines up consecutive photos, boxes the part that disappeared, remembers it, and plays the steps in reverse when you rebuild.","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","dateModified":"2026-11-06","author":{"@type":"Person","name":"Raemin Kang","url":"https://github.com/kangraemin"},"publisher":{"@id":"https://kangraemin.github.io/undotable/#site"}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -19,7 +35,26 @@
       <button data-go="parts">Parts</button>
     </nav>
   </header>
-  <main id="view" tabindex="-1"></main>
+  <main id="view" tabindex="-1">
+    <section class="hero">
+      <h1>Undo for the stuff<br>you take apart.</h1>
+      <p class="lead">Snap a photo after each part you remove. When it's time to rebuild, UndoTable circles where every piece came from and walks you back in reverse.</p>
+      <p class="fine">This page needs JavaScript: the photo comparer and the image models run inside your browser, and nothing is uploaded. The first comparison downloads about 110 MB of models once.</p>
+    </section>
+    <ol class="how">
+      <li><b>Snap</b> the whole thing from above.</li>
+      <li><b>Remove</b> a part, move it out of the frame, snap again. Repeat.</li>
+      <li><b>Put it back</b>: steps in reverse, every part circled on your own photo.</li>
+      <li><b>Mystery screw?</b> Photograph it. The app finds where it came from.</li>
+    </ol>
+    <section>
+      <h2>How it works</h2>
+      <p>OpenCV.js lines two photos up with ORB keypoints and a RANSAC homography, then finds what disappeared with a Lab colour difference. A DINOv2-small vector stores each part, and a CLIP vector suggests a name from 50 part names. Teardowns are kept in IndexedDB on your device.</p>
+      <p>Tested on four sets of AI-generated photos: 20 of 20 removed parts were detected with no false alarms.</p>
+      <p><a href="https://github.com/kangraemin/undotable">Source code (MIT)</a> · <a href="https://youtu.be/76SbhcEdTPQ">Demo video</a> · <a href="https://learn-ai-basics.devpost.com/">Built for Devpost Build With AI: Basics</a></p>
+      <p class="fine">Last updated 2026-11-06.</p>
+    </section>
+  </main>
   <div id="busy" class="busy" role="status" aria-live="polite" hidden></div>
   <dialog id="sheet" class="sheet"></dialog>
   <input id="shoot" type="file" accept="image/*" capture="environment" hidden>
